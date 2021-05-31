@@ -1,10 +1,19 @@
-import { Router } from "express";   
-import { CursoController } from "./controllers/CursoController";
+import { Router } from "express";
+import { CourseController } from "./controllers/CourseController";
+import { UserController } from "./controllers/UserController";
+
 
 const router = Router();
 
-const cursoController = new CursoController()
+const userController = new UserController();
+const courseController = new CourseController();
 
-router.post('/curso', cursoController.create)
+router.post("/usuario",userController.create);
 
-export { router };
+router.post("/curso",courseController.create);
+router.post("/cursos",courseController.createMany);
+router.get("/cursos",courseController.list);
+
+router.get("/cursos/categoria",courseController.listFilterCategory)
+
+export { router }
