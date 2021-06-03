@@ -43,6 +43,24 @@ class CourseController{
         return res.json(courseFilterCategory);
     }
 
+    async listFilterSite(req: Request,res: Response){
+        const { site } = req.body;
+
+        const courseRepository = getCustomRepository(CoursesRepository);
+        const courseFilterSite = await courseRepository.find({where: { DS_SITE: site}});
+        
+        return res.json(courseFilterSite);
+    }
+
+    async listFilterLanguage(req: Request,res: Response){
+        const { linguagem } = req.body;
+
+        const courseRepository = getCustomRepository(CoursesRepository);
+        const courseFilterLinguagem = await courseRepository.find({where: { DS_SITE: linguagem}});
+        
+        return res.json(courseFilterLinguagem);
+    }
+
 
 }
 

@@ -37,6 +37,14 @@ export class CreateCourse1622168109326 implements MigrationInterface {
                         type:"varchar"
                     },
                     {
+                        name:"ds_site",
+                        type:"varchar"
+                    },
+                    {
+                        name:"ds_linguagem",
+                        type:"varchar"
+                    },
+                    {
                         name:"CREATED_AT",
                         type:"timestamp",
                         default: "now()"
